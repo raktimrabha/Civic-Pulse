@@ -1,0 +1,28 @@
+// src/scss/main.scss
+
+// --- OPTIONAL: Variable Overrides ---
+// If you need to override Bootstrap variables (like colors, fonts),
+// you MUST do it *before* importing the main bootstrap file.
+// You need to @use 'variables' and potentially 'functions' first here.
+// Example:
+// @use "bootstrap/scss/functions"; // Load functions first
+// @use "bootstrap/scss/variables" with ( // Load variables and override
+//   $primary: #9933cc, // Custom primary color
+//   $enable-gradients: true
+// );
+// --- End Optional Overrides ---
+
+
+// --- REQUIRED: Import Bootstrap Core ---
+// This single line imports the entire Bootstrap bundle,
+// ensuring functions, variables, mixins, etc., are loaded correctly internally.
+@use "bootstrap/scss/bootstrap";
+// --- End Bootstrap Core ---
+
+
+// --- REQUIRED: Import Your Custom Styles ---
+// Import your custom styles *after* Bootstrap.
+// This makes it easier for your rules to override Bootstrap's.
+@use "custom";
+// --- End Custom Styles ---
+

@@ -1,0 +1,45 @@
+// src/scss/_custom.scss
+
+// Keep it simple for now
+body {
+  background-color: #f8f9fa; // Light background
+}
+
+.issue-card {
+  // Add subtle shadow or border if desired
+  // box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.vote-controls {
+  display: flex;
+  flex-direction: column; // Stack buttons vertically
+  align-items: center;
+  justify-content: center;
+  width: 40px; // Fixed width
+  background-color: #f1f1f1;
+  padding: 0.25rem 0;
+
+  .vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #6c757d; // Secondary color
+    font-size: 1.2rem;
+    line-height: 1;
+    padding: 0.1rem 0;
+
+    &:hover:not(:disabled) {
+      color: #343a40; // Darker color on hover
+    }
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+  }
+  .vote-count {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin: 0.2rem 0;
+    color: #212529; // Default text color
+  }
+}
