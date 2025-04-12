@@ -3,8 +3,8 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { useUser } from '@clerk/clerk-react';
 import { supabase } from '../utils/supabaseClient';
-import CreatePostForm from '../components/CreatePostForm';
-import PostsList from '../components/PostsList';
+import CreatePostForm from './CreatePostForm';
+import PostsList from './PostsList';
 
 function CommunityView() {
   const { id } = useParams();
