@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civic Pulse</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">Civic Pulse</a>
+            <div id="user-section" class="ms-auto d-flex align-items-center">
+                <!-- User info / Login button appears here -->
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <!-- Auth Forms (Hidden when logged in) -->
+        <div id="auth-container" class="row justify-content-center mb-4">
+            <div class="col-md-6">
+                <div id="login-form-container" class="card p-4 shadow-sm">
+                    <h3 class="text-center mb-3">Login</h3>
+                    <form id="login-form">
+                        <div class="mb-3">
+                            <input type="email" id="login-email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="login-password" class="form-control" placeholder="Password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary w-100 mb-2">Login</button>
+                        <p class="text-center mt-2 mb-0">
+                            Don't have an account? <a href="#" id="show-signup">Sign Up</a>
+                        </p>
+                    </form>
+                </div>
+
+                <div id="signup-form-container" class="card p-4 shadow-sm" style="display: none;">
+                    <h3 class="text-center mb-3">Sign Up</h3>
+                    <form id="signup-form">
+                         <div class="mb-3">
+                            <input type="text" id="signup-username" class="form-control" placeholder="Username (min 3 chars)" required minlength="3">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" id="signup-email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <input type="password" id="signup-password" class="form-control" placeholder="Password (min 6 chars)" required minlength="6">
+                        </div>
+                        <button type="submit" class="btn btn-success w-100 mb-2">Sign Up</button>
+                        <p class="text-center mt-2 mb-0">
+                            Already have an account? <a href="#" id="show-login">Login</a>
+                        </p>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content (Hidden when logged out) -->
+        <div id="content-container" style="display: none;">
+            <div class="row mb-4 align-items-center">
+                <div class="col-md-8">
+                    <label for="neighborhood-filter" class="form-label visually-hidden">Filter by Neighborhood</label>
+                    <select id="neighborhood-filter" class="form-select">
+                        <option value="downtown">Downtown</option>
+                        <option value="eastside">Eastside</option>
+                        <option value="westside">Westside</option>
+                        <option value="northside">Northside</option>
+                        <option value="southside">Southside</option>
+                        <!-- Add more neighborhoods as needed -->
+                    </select>
+                </div>
+                <div class="col-md-4 text-end">
+                    <button id="new-issue-btn" class="btn btn-success">
+                       <i class="bi bi-plus-circle"></i> Report New Issue
+                    </button>
+                </div>
+            </div>
+
+            <!-- New Issue Form (Initially Hidden) -->
+            <div id="new-issue-form-container" style="display: none;" class="card p-3 mb-4 shadow-sm">
+                <h3>Report a New Issue</h3>
+                <form id="issue-form">
+                    <div class="mb-3">
+                        <input type="text" id="issue-title" class="form-control" placeholder="Issue Title" required>
+                    </div>
+                    <div class="mb-3">
+                        <textarea id="issue-description" class="form-control" rows="3" placeholder="Describe the issue..." required></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit Issue</button>
+                    <button type="button" id="cancel-issue-btn" class="btn btn-outline-secondary">Cancel</button>
+                </form>
+            </div>
+
+            <!-- Issues List -->
+            <div id="issues-container">
+                <!-- Issues will be loaded here by JavaScript -->
+                <div class="text-center p-4"><div class="spinner-border text-primary" role="status"><span class="visually-hidden">Loading...</span></div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Firebase SDK -->
+    <script type="module" src="app.js"></script>
+</body>
+</html>

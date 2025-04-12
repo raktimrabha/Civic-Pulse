@@ -1,0 +1,245 @@
+/* General Styles */
+body {
+    /* Modern Font Stack - Prioritizes system fonts */
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    background-color: #f0f2f5; /* Lighter grey background */
+    color: #1c1c1c; /* Default dark text color */
+}
+
+.container {
+    max-width: 960px; /* Limit content width */
+}
+
+/* Navbar */
+.navbar {
+    background-color: #219ebc; /* Primary Color */
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+/* Ensure navbar text is white (Bootstrap usually handles this with .navbar-dark) */
+.navbar-dark .navbar-brand,
+.navbar-dark .nav-link,
+.navbar-dark .navbar-text {
+    color: #ffffff;
+}
+.navbar-dark .navbar-brand:hover,
+.navbar-dark .nav-link:hover {
+    color: #e0f7fa; /* Lighter shade for hover */
+}
+
+/* Links */
+a {
+    color: #557dbf; /* Links/Upvote Accent */
+    text-decoration: none;
+}
+a:hover {
+    color: #2e8fc2; /* Secondary Color on hover */
+    text-decoration: underline;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: #219ebc;
+    border-color: #219ebc;
+    color: #ffffff;
+}
+.btn-primary:hover {
+    background-color: #1b87a0; /* Darker shade */
+    border-color: #1b87a0;
+    color: #ffffff;
+}
+.btn-success { /* Used for Report Issue */
+    background-color: #2e8fc2;
+    border-color: #2e8fc2;
+    color: #ffffff;
+}
+.btn-success:hover {
+    background-color: #2575a1; /* Darker shade */
+    border-color: #2575a1;
+    color: #ffffff;
+}
+.btn-outline-secondary {
+    border-color: #adb5bd;
+    color: #495057;
+}
+.btn-outline-secondary:hover {
+    background-color: #e9ecef;
+    color: #212529;
+}
+.btn-link { /* Used for Edit/Delete */
+    color: #6c757d; /* Standard grey */
+    text-decoration: none;
+}
+.btn-link:hover {
+    color: #495057;
+}
+.delete-comment-btn {
+    color: #a03768 !important; /* Danger Color */
+}
+.delete-comment-btn:hover {
+    color: #7c2a50 !important; /* Darker Danger */
+}
+
+
+/* Auth Forms */
+#auth-container .card {
+    max-width: 400px;
+    margin: 3rem auto;
+    border: 1px solid #d6d9dc; /* Lighter border */
+    box-shadow: 0 1px 3px rgba(0,0,0,.05);
+}
+
+/* Issue Card Styling */
+.issue-card {
+    display: flex;
+    background-color: #FFFFFF;
+    border: 1px solid #d6d9dc; /* Lighter border */
+    border-radius: 4px;
+    margin-bottom: 10px;
+    overflow: hidden;
+}
+
+.vote-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 8px 5px;
+    background-color: #f8f9fa; /* Keep light grey for contrast */
+    flex-shrink: 0;
+    width: 40px;
+}
+
+.vote-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1.4rem;
+    color: #adb5bd; /* Lighter grey for inactive state */
+    padding: 2px 0;
+    line-height: 1;
+    transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
+}
+.vote-btn:hover {
+    background-color: #e9ecef;
+}
+/* Use palette for hover/voted states */
+.vote-btn.upvote-btn:hover,
+.vote-btn.upvote-btn.voted {
+    color: #557dbf; /* Links/Upvote Accent */
+}
+.vote-btn.downvote-btn:hover,
+.vote-btn.downvote-btn.voted {
+    color: #7a67ae; /* Downvote Accent */
+}
+.vote-btn:disabled {
+    color: #e0e0e0; /* Very light grey when disabled */
+    cursor: not-allowed;
+    background-color: transparent !important; /* Ensure no hover background when disabled */
+}
+
+.vote-count {
+    font-weight: bold;
+    margin: 5px 0;
+    color: #1c1c1c; /* Dark text for vote count */
+    font-size: 0.9rem;
+}
+
+.issue-content {
+    flex-grow: 1;
+    padding: 10px 15px; /* Slightly more padding */
+}
+
+.issue-meta {
+    font-size: 0.75rem;
+    color: #6c757d; /* Standard meta grey */
+    margin-bottom: 4px;
+}
+.issue-meta strong {
+    color: #1c1c1c; /* Dark username */
+}
+
+.issue-content .card-title {
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+    color: #1c1c1c; /* Dark title */
+    font-weight: 500; /* Slightly bolder title */
+}
+
+.issue-content .card-text {
+    font-size: 0.9rem;
+    line-height: 1.5; /* Improved line spacing */
+    color: #1c1c1c;
+}
+
+/* Comments Section */
+.comment-section {
+    margin-top: 15px;
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef; /* Lighter border */
+}
+.comment-section h6 {
+    font-size: 0.8rem;
+    color: #495057; /* Slightly darker grey for heading */
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+.comment-section h6 i {
+    margin-right: 4px;
+    color: #944f90; /* Subtle Accent for comment icon */
+}
+
+.comment {
+    margin-bottom: 12px;
+    padding-left: 10px;
+    border-left: 2px solid #e9ecef;
+}
+.comment p.comment-text { /* Target comment text specifically */
+    font-size: 0.88rem; /* Slightly larger comment text */
+    margin-bottom: 3px;
+    color: #1c1c1c;
+    line-height: 1.45;
+}
+.comment-meta {
+    font-size: 0.75rem;
+    color: #6c757d;
+}
+.comment-meta strong {
+    color: #1c1c1c;
+}
+.comment-meta .btn-link { /* Style edit/delete links in meta */
+    font-size: 0.75rem; /* Match meta text size */
+    vertical-align: baseline;
+}
+.comment-meta .btn-link i {
+    font-size: 0.9em; /* Slightly smaller icons */
+    vertical-align: middle;
+    margin-right: 2px;
+}
+
+
+/* Add/Edit Comment Forms */
+.add-comment-form .form-control,
+.edit-comment-textarea {
+    font-size: 0.85rem;
+    border-color: #ced4da;
+}
+.add-comment-form .form-control:focus,
+.edit-comment-textarea:focus {
+    border-color: #557dbf; /* Use accent color for focus */
+    box-shadow: 0 0 0 0.2rem rgba(85, 125, 191, 0.25); /* Matching focus shadow */
+}
+
+.add-comment-form .btn,
+.edit-comment-form .btn {
+    font-size: 0.8rem; /* Smaller buttons for forms */
+}
+
+.edit-comment-form {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #f8f9fa; /* Light background for edit area */
+    border-radius: 4px;
+}
+
+/* Utility */
+.text-muted { color: #6c757d !important; }
+.shadow-sm { box-shadow: 0 .125rem .25rem rgba(0,0,0,.075) !important; }
